@@ -105,6 +105,7 @@ python login.py
 
 ##  Developer
 
+MANO S,
 Junior Python & Web Developer
 
 ---
