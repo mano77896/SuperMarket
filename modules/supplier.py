@@ -24,4 +24,73 @@ class supplier:
         self.pincode = StringVar() 
         self.status = StringVar()
 
+        self.search_by = StringVar()
+        self.search_txt = StringVar() 
+
+        self.title = Label(
+            self.root,
+            text="SUPPLIER MANAGEMENT",
+            font=("Arial",24,"bold"),
+            bg="#2c3e50",
+            fg="white",
+            pady=10
+        )
+
+        self.title.pack(fill=X) 
+
+        left = Frame(
+            self.root, 
+            bg="white",
+            bd=2,
+            relief=RIDGE
+        )
         
+        left.place(
+            x=10,
+            y=60,
+            width=420,
+            height=620
+        )
+
+        Label(
+            left,
+            text="Supplier Details",
+            font=("Arial",16,"bold"),
+            bg="#3498db",
+            fg="white",
+            pady=5
+        ).pack(fill=X)
+
+        form = Frame(
+            left,
+            bg="White"
+        )
+
+        form.pack(
+            fill=BOTH,
+            expand=True,
+            padx=10,
+            pady=15 
+        )
+
+        Label(
+            form,
+            text="Supplier name",
+            bg="white",
+            font=("Arial", 11, "bold")
+        ).grid(row=0, column=0, pady=8, sticky=W)
+
+        Entry(
+            form,
+            textvariable=self.name,
+            font=("Arial", 11)
+        ).grid(row=0, column=1, padx=10, pady=8)
+
+
+        
+
+if __name__ == "__main__":
+
+    root = Tk()
+    obj = supplier(root) 
+    root.mainloop()
