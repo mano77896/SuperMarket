@@ -2,12 +2,12 @@ from tkinter import *
 from tkinter import ttk, messagebox
 from db import connect_db 
 
-class supplier:
+class Supplier:
 
     def __init__(self, root):
 
         self.root = root
-        self.root.title("Supper Market Billing System - Supplier Management")
+        self.root.title("Super Market Billing System - Supplier Management")
         self.root.geometry("1350x700")
         self.root.configure(bg="#ecf0f1")
         self.root.resizable(False, False)
@@ -18,11 +18,11 @@ class supplier:
         self.company = StringVar()
         self.mobile = StringVar()
         self.email = StringVar()
-        self.gst = StringVar()
+        self.gst_no = StringVar() 
         self.city = StringVar()
         self.state = StringVar()
         self.pincode = StringVar() 
-        self.status = StringVar()
+        
 
         self.search_by = StringVar()
         self.search_txt = StringVar() 
@@ -86,11 +86,62 @@ class supplier:
             font=("Arial", 11)
         ).grid(row=0, column=1, padx=10, pady=8)
 
+        Label(
+            form,
+            text="Company",
+            bg="white",
+            font=("Arial", 11, "bold")
+        ).grid(row=1, column=0, pady=8, sticky=W)
+
+        Entry(
+            form,
+            textvariable=self.company,
+            font=("Arial", 11)
+        ).grid(row=1, column=1, padx=10, pady=8)
+
+        Label(
+            form,
+            text="Mobile",
+            bg="white",
+            font=("Arial",11,"bold")
+        ).grid(row=2, column=0, pady=8, sticky=W)
+
+        Entry(
+            form,
+            textvariable=self.mobile,
+            font=("Arial",11)
+        ).grid(row=2, column=1, padx=10, pady=8)
+
+        Label(
+            form,
+            text="Email",
+            bg="white",
+            font=("Arial",11,"bold")
+        ).grid(row=3, column=0, pady=8, sticky=W)
+
+        Entry(
+            form,
+            textvariable=self.email,
+            font=("Arial",11)
+        ).grid(row=3, column=1, padx=10, pady=8)
+
+        Label(
+            form,
+            text="GST Number",
+            bg="white",
+            font=("Arial",11,"bold")
+        ).grid(row=4, column=0, pady=8, sticky=W)
+
+        Entry(
+            form,
+            textvariable=self.gst_no,
+            font=("Arial",11)
+        ).grid(row=4, column=1, padx=10, pady=8) 
 
         
 
 if __name__ == "__main__":
 
     root = Tk()
-    obj = supplier(root) 
+    obj = Supplier(root) 
     root.mainloop()
