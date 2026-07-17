@@ -136,9 +136,134 @@ class Supplier:
             form,
             textvariable=self.gst_no,
             font=("Arial",11)
-        ).grid(row=4, column=1, padx=10, pady=8) 
+        ).grid(row=4, column=1, padx=10, pady=8)
+
+        Label(
+            form,
+            text="Address",
+            bg="white",
+            font=("Arial",11,"bold")
+        ).grid(row=5, column=0, sticky=W, pady=8)
+
+        self.txt_address = Text(
+            form,
+            width=25,
+            height=4,
+            font=("Arial", 11)
+        )
+
+        self.txt_address.grid(
+            row=5,
+            column=1,
+            padx=10,
+            pady=8
+        )
+
+        Label(
+            form,
+            text="City",
+            bg="white",
+            font=("Arial",11,"bold")
+        ).grid(row=6, column=0, sticky=W, pady=8)
+
+        Entry(
+            form,
+            textvariable=self.city,
+            font=("Arial",11)
+        ).grid(row=6, column=1, padx=10, pady=8)
+
+        Label(
+            form,
+            text="State",
+            bg="white",
+            font=("Arial",11,"bold")
+        ).grid(row=7, column=0, sticky=W, pady=8)
+
+        Entry(
+            form,
+            textvariable=self.state,
+            font=("Arial",11)
+        ).grid(row=7, column=1, padx=10, pady=8)
+
+        Label(
+            form,
+            text="Pincode",
+            bg="white",
+            font=("Arial",11,"bold")
+        ).grid(row=8, column=0, sticky=W, pady=8)
+
+        Entry(
+            form,
+            textvariable=self.pincode,
+            font=("Arial",11)
+        ).grid(row=8, column=1, padx=10, pady=8)
+
 
         
+
+        btn_frame = Frame(
+            left,
+            bg="white"
+        )
+
+        btn_frame.pack(
+            fill=X,
+            pady=10
+        )
+
+        Button(
+            btn_frame,
+            text="Save",
+            bg="#27ae60",
+            fg="white",
+            font=("Arial",11,"bold"),
+            width=10,
+            command=self.save_supplier
+        ).grid(row=0, column=0, padx=5)
+
+        Button(
+            btn_frame,
+            text="Update",
+            bg="#2980b9",
+            fg="white",
+            font=("Arial",11,"bold"),
+            width=10,
+            command=self.update_supplier
+        ).grid(row=0, column=1, padx=5)
+
+
+        Button(
+            btn_frame,
+            text="Delete",
+            bg="#c0392b",
+            fg="white",
+            font=("Arial",11,"bold"),
+            width=10,
+            command=self.delete_supplier
+        ).grid(row=0, column=2, padx=5)
+
+        Button(
+            btn_frame,
+            text="Clear",
+            bg="#7f8c8d",
+            fg="white",
+            font=("Arial",11,"bold"),
+            width=10,
+            command=self.clear
+        ).grid(row=0, column=3, padx=5)
+
+    def save_supplier(self):
+        pass
+
+    def update_supplier(self):
+        pass
+
+    def delete_supplier(self):
+        pass
+
+    def clear(self):
+        pass
+
 
 if __name__ == "__main__":
 
