@@ -95,9 +95,9 @@ python login.py
 
 ✅ Customer Module Completed
 
-🟡 Supplier Module In Progress
+✅ Supplier Module completed 
 
-🔜 Billing Module
+🔜 Billing Module Under progress
 
 🔜 Sales Report
 
