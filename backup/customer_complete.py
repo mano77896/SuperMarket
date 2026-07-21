@@ -300,7 +300,7 @@ class Customer:
             command=self.fetch_data
         ).grid(row=0,column=4,padx=5)
 
-        # ================= Table Frame =================
+        
 
         table_frame = Frame(right, bd=3, relief=RIDGE)
         table_frame.pack(fill=BOTH, expand=True, padx=10, pady=10)
