@@ -18,7 +18,7 @@ class Product:
         self.root.configure(bg="#ecf0f1")
         self.root.resizable(False, False)
 
-        # ================= Variables =================
+        
 
         self.product_id = ""
 
@@ -34,7 +34,7 @@ class Product:
         self.status = StringVar(value="Available")
         self.image_path = StringVar() 
 
-        # ================= Title =================
+        
 
         title = Label(
             self.root,
@@ -47,7 +47,7 @@ class Product:
 
         title.pack(fill=X)
 
-        # ================= Left Frame =================
+        
 
         left = Frame(
             self.root,
@@ -70,7 +70,7 @@ class Product:
         form = Frame(left, bg="white")
         form.pack(fill=BOTH, expand=True, padx=10, pady=15)
 
-        # ================= Labels =================
+        
 
         Label(form, text="Barcode", bg="white",
               font=("Arial", 11, "bold")).grid(row=0, column=0, sticky=W, pady=8)
@@ -137,7 +137,7 @@ class Product:
         self.cmb_status.grid(row=9, column=1, pady=8, padx=10)
         self.cmb_status.current(0)
 
-        # ================= Product Image =================
+        
 
         Label(form, text="Product Image", bg="white",
               font=("Arial", 11, "bold")).grid(row=10, column=0, pady=8, sticky=W)
@@ -166,7 +166,7 @@ class Product:
             font=("Arial", 10, "bold")
         ).grid(row=10, column=2, padx=5)
 
-        # ================= Image Preview =================
+        
 
         self.img_label = Label(
             form,
@@ -184,7 +184,7 @@ class Product:
             pady=10
         )
 
-        # ================= Buttons =================
+        
 
         btn_frame = Frame(left, bg="white")
         btn_frame.pack(fill=X, pady=10)
@@ -229,7 +229,7 @@ class Product:
             command=self.clear
         ).grid(row=0, column=3, padx=5)
 
-        # ================= Right Frame =================
+        
 
         right = Frame(
             self.root,
@@ -335,7 +335,7 @@ class Product:
         scroll_x.config(command=self.product_table.xview)
         scroll_y.config(command=self.product_table.yview)
 
-        # ================= Table Heading =================
+    
 
         self.product_table.heading("id", text="ID")
         self.product_table.heading("barcode", text="Barcode")
@@ -421,7 +421,7 @@ class Product:
 
     def save_product(self):
 
-        # Required field validation
+        
         if (
             self.barcode.get() == "" or
             self.name.get() == "" or
@@ -435,7 +435,7 @@ class Product:
             )
             return
         
-        # Numeric validation
+        
         try:
             float(self.purchase.get())
             float(self.selling.get())
@@ -465,7 +465,7 @@ class Product:
 
         cur = con.cursor()
 
-        # Check duplicate barcode
+        
         cur.execute(
             "SELECT * FROM products WHERE barcode=%s",
             (self.barcode.get(),)
@@ -483,7 +483,7 @@ class Product:
             return
         
 
-        # ================= Copy Product Image =================
+        
         image_db_path = "images/no_image.png"
 
         if hasattr(self, "selected_image"):
@@ -618,7 +618,7 @@ class Product:
         self.expiry.set(row[9])
         self.status.set(row[10])
 
-        # ================= Load Image =================
+        
 
         image_path = row[11]
         self.image_path.set(image_path)
